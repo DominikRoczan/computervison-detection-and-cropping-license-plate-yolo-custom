@@ -1,0 +1,14 @@
+# Directories
+.venv/
+
+.test/
+
+.final/
+
+.test/
+
+.ultralytics/
+
+
+# Files
+*.pt
