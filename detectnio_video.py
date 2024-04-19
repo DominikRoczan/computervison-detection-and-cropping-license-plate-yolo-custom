@@ -9,8 +9,9 @@ import pdb
 
 from import_image import video_path_2
 
+
 # Importuj moduł YOLO z repozytorium YOLOv5
-from test.trash.yolov5.models import Model
+from yolov5.models.yolo import Model
 
 # Załaduj wytrenowany model YOLOv5 do detekcji tablic rejestracyjnych
 plate_model_path = ('G:/Mój dysk/10_Machine Learning/00_Projekty/Data_Sets/PlateCar-Data_set/train7/weights/best.pt')
