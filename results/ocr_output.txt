@@ -1,9 +1,13 @@
 Detected text:
-KA 0824F
+EBE 30531
 
 Detected text:
-MPL74374
+EBE 89NP
 
 Detected text:
-DST 4550
+ELA 04J5]
+CEL]
+
+Detected text:
+EWIFS33
 

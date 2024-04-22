@@ -11,7 +11,7 @@ image_paths = image_path
 image = cv2.imread(image_paths)
 
 # Załaduj model YOLO
-model_path = 'D:/Machine_Learning/Projekty/01_ObjectDetection-CarLicensePlates/trained_model/train7/weights/best.pt'
+model_path = 'trained_model/weights/best.pt'
 model = YOLO(model_path)  # Używając ścieżki do wcześniej wytrenowanego modelu
 
 # Przeprowadź detekcję na listę obrazów
@@ -44,7 +44,7 @@ for r in results:
 
         label = f"{class_name} {confidence:.2f}"
 
-        if confidence > 0.5:
+        if confidence > 0.15:
             detected = True
             box_width = int(xyxy[0][2]) - int(xyxy[0][0])
             idx += 1
@@ -84,7 +84,7 @@ for r in results:
             label_endpoints.append((text_x + text_size[0], text_y + text_size[1] // 2))
 
 # OCR
-ocr = easyocr.Reader(['pl'])
+ocr = easyocr.Reader(['en'])
 
 # Ścieżka do zapisania pliku tekstowego
 ocr_output_path = os.path.join(dir_name, 'ocr_output.txt')

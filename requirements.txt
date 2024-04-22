@@ -1,0 +1,5 @@
+pip install numpy opencv-python easyocr torch torchvision
+
+pip install git+https://github.com/ultralytics/yolov5  # Zakładając, że ultralytics jest dostępne tak
+
+pip freeze > requirements.txt

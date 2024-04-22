@@ -54,7 +54,7 @@ def pad(image, new_shape=(640, 640), color=(114, 114, 114)):
 def play_video(video_path_2):
     cap = cv2.VideoCapture(video_path_2)
 
-    reader = easyocr.Reader(['en'], gpu=False)
+    reader = easyocr.Reader(['en'], gpu=True)
     detected_texts = set()
 
     results_path = 'results'
@@ -77,7 +77,11 @@ def play_video(video_path_2):
             frame_tensor = transform(frame_padded).unsqueeze(0).to('cpu')  # Dodaje wymiar batch i przekazuje do CPU
             # print(2, frame_tensor)
             vehicle_results = vehicle_model(frame_tensor)
-            print(5, vehicle_model.names)
+            print(5, vehicle_results)
+            # print(5, vehicle_model.names)
+
+
+
 
             for *xyxy, conf, cls in vehicle_results[0]:
 
@@ -87,7 +91,7 @@ def play_video(video_path_2):
 
                 if label in ['car', 'truck', 'bus']:
 
-                    cropped_image = frame_padded[int(xyxy[1]):int(xyxy[3]), int(xyxy[0]):int(xyxy[2])]
+                    cropped_image = frame_padded[int(xyxy[0][1]):int(xyxy[0][3]), int(xyxy[0]):int(xyxy[2])]
                     license_results = plate_model(cropped_image)
 
                     for *lp_xyxy, lp_conf, lp_cls in license_results.xyxy[0]:

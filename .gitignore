@@ -9,6 +9,8 @@
 
 .ultralytics/
 
+.yolov5/
+
 
 # Files
 *.pt

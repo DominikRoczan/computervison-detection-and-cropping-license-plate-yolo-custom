@@ -1,4 +1,4 @@
-image_path = 'test/bielany.jpg'
+image_path = 'test/Bel.jpg'
 
 
 
