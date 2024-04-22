@@ -1,15 +1,15 @@
 # Directories
-.venv/
+venv/
 
-.test/
+test/
 
-.final/
+final/
 
-.test/
+test/
 
-.ultralytics/
+ultralytics/
 
-.yolov5/
+yolov5/
 
 
 # Files
